@@ -1,10 +1,9 @@
 {
   "name": "npmtestxxx",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Building package ;-)\""
   },
   "repository": {
