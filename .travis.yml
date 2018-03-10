@@ -4,28 +4,19 @@ node_js:
 cache:
   directories:
   - node_modules
-
-jobs:
-  include:
-    - stage: building
-      script:
-        - npm install
-        - npm run build
-    - stage: tests
-      script: echo "tests stage"
-    - stage: npm_release
-      deploy:
-        provider: npm
-        email: $EMAIL
-        api_key: $API_KEY
-        skip_cleanup: true
-        on:
-          branch: release
-    - stage: github_pages
-      deploy:
-        provider: pages
-        github_token: $GITHUB_TOKEN
-        local_dir: docs
-        skip_cleanup: true
-        on:
-          branch: release
+script:
+  - npm install
+  - npm run build
+deploy:
+  - provider: npm
+    email: $EMAIL
+    api_key: $API_KEY
+    skip_cleanup: true
+    on:
+      branch: release
+  - provider: pages
+    github_token: $GITHUB_TOKEN
+    local_dir: docs
+    skip_cleanup: true
+    on:
+      branch: release
