@@ -5,9 +5,7 @@ cache:
   directories:
   - node_modules
 script:
-  - npm install
   - npm run build
-  - echo $GITHUB_PAGES_CNAME > docs/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
