@@ -18,8 +18,14 @@ jobs:
         provider: npm
         email: $EMAIL
         api_key: $API_KEY
+        skip_cleanup: true
         on:
           branch: release
-        skip_cleanup: true
     - stage: github_pages
-      script: echo "github pages"
+      deploy:
+        provider: pages
+        github_token: $GITHUB_TOKEN
+        local_dir: docs
+        skip_cleanup: true
+        on:
+          branch: release
