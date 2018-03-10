@@ -7,6 +7,8 @@ cache:
 script:
   - npm run build
 deploy:
+  edge:
+    branch: pages-ivar-set
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
