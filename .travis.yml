@@ -16,8 +16,9 @@ deploy:
   #   on:
   #     branch: release
   provider: pages
-  github_token: $GITHUB_TOKEN
-  local_dir: docs
   skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep-history: true
+  local_dir: docs
   on:
     branch: release
