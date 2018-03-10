@@ -6,10 +6,20 @@ cache:
   - node_modules
 script:
   - npm run build
-deploy:
-  provider: npm
-  email: $EMAIL
-  api_key: $API_KEY
-  skip_cleanup: true
-  on:
-    branch: release
+
+jobs:
+  include:
+    - stage: building
+      script: echo "building"
+    - stage: tests
+      script: echo "tests stage"
+    - stage: npm_release
+      deploy:
+        provider: npm
+        email: $EMAIL
+        api_key: $API_KEY
+        on:
+          branch: release
+        skip_cleanup: true
+    - stage: github_pages
+      script: echo "github pages"
