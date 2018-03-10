@@ -9,14 +9,15 @@ script:
 deploy:
   edge:
     branch: pages-ivar-set    # Downgrade dpl. Issue: https://github.com/travis-ci/travis-ci/issues/9312
-  skip_cleanup: true
   - provider: npm
+    skip_cleanup: true
     email: $EMAIL
     api_key: $API_KEY
     on:
       branch: release
   - provider: pages
     fqdn: npmtestxxx.js.org
+    skip_cleanup: true
     github_token: $GITHUB_TOKEN
     keep-history: true
     local_dir: docs
