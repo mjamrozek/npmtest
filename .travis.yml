@@ -7,15 +7,17 @@ cache:
 script:
   - npm run build
 deploy:
-  edge:
-    branch: pages-ivar-set    # Downgrade dpl. Issue: https://github.com/travis-ci/travis-ci/issues/9312
   - provider: npm
+    edge:
+      branch: pages-ivar-set    # Downgrade dpl. Issue: https://github.com/travis-ci/travis-ci/issues/9312
     skip_cleanup: true
     email: $EMAIL
     api_key: $API_KEY
     on:
       branch: release
   - provider: pages
+    edge:
+      branch: pages-ivar-set    # Downgrade dpl. Issue: https://github.com/travis-ci/travis-ci/issues/9312
     fqdn: npmtestxxx.js.org
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
