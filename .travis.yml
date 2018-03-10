@@ -10,6 +10,7 @@ deploy:
   edge:
     branch: pages-ivar-set
   provider: pages
+  fqdn: npmtestxxx.js.org
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep-history: true
