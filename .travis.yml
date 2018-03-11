@@ -8,16 +8,12 @@ script:
   - npm run build
 deploy:
   - provider: npm
-    edge:
-      branch: pages-ivar-set
     skip_cleanup: true
     email: $EMAIL
     api_key: $API_KEY
     on:
       branch: release
   - provider: pages
-    edge:
-        branch: pages-ivar-set
     fqdn: npmtestxxx.js.org
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
