@@ -19,3 +19,5 @@ jobs:
         skip_cleanup: true
         email: $EMAIL
         api_key: $API_KEY
+        on:
+          branch: release
