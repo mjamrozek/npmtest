@@ -12,7 +12,6 @@ script:
 jobs:
   include:
     - stage: release
-      if: tag IS present
       node_js: "8"
       deploy:
         provider: npm
@@ -21,3 +20,4 @@ jobs:
         api_key: $API_KEY
         on:
           branch: release
+          tags: true
