@@ -34,7 +34,6 @@ release-minor:
 # Release packege with bumped patch version
 .PHONY: release-patch
 release-patch:
-	git commit -m "xyz"
 	npm version patch -m $(RELEASE_MESSAGE)
 
 .PHONY: clean
