@@ -35,6 +35,7 @@ release-minor:
 .PHONY: release-patch
 release-patch:
 	npm version patch -m $(RELEASE_MESSAGE)
+	git push
 
 .PHONY: clean
 clean:
