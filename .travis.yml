@@ -9,7 +9,7 @@ script:
 deploy:
   - provider: npm
     edge:
-      branch: v1.8.47
+      branch: v1.8.47     # Temporary workaround for https://github.com/travis-ci/travis-ci/issues/9312
     skip_cleanup: true
     email: $EMAIL
     api_key: $API_KEY
@@ -17,7 +17,7 @@ deploy:
       branch: release
   - provider: pages
     edge:
-      branch: v1.8.47
+      branch: v1.8.47     # Temporary workaround for https://github.com/travis-ci/travis-ci/issues/9312
     fqdn: npmtestxxx.js.org
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
