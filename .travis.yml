@@ -8,16 +8,13 @@ script:
   - npm run build
 deploy:
   - provider: npm
-    edge:
-      branch: v1.8.47     # Temporary workaround for https://github.com/travis-ci/travis-ci/issues/9312
+    if: tag IS present
     skip_cleanup: true
     email: $EMAIL
     api_key: $API_KEY
     on:
       branch: release
   - provider: pages
-    edge:
-      branch: v1.8.47     # Temporary workaround for https://github.com/travis-ci/travis-ci/issues/9312
     fqdn: npmtestxxx.js.org
     skip_cleanup: true
     github_token: $GITHUB_TOKEN
