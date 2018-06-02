@@ -1,11 +1,10 @@
+sudo: false
 language: node_js
 node_js:
   - "6"
   - "7"
   - "8"
   - "9"
-install:
-  - npm ci
 script:
   - npm run build
 jobs:
@@ -16,6 +15,7 @@ jobs:
         - npm shrinkwrap
       deploy:
         provider: npm
+        skip_cleanup: true
         email: $EMAIL
         api_key: $API_KEY
         on:
