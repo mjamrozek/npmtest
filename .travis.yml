@@ -1,5 +1,7 @@
 language: node_js
 node_js:
+  - "6"
+  - "7"
   - "8"
   - "9"
 cache:
@@ -9,7 +11,7 @@ script:
   - npm run build
 jobs:
   include:
-    - stage release
+    - stage: release
       if: tag IS present
       node_js: "8"
       deploy:
