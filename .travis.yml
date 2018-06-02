@@ -21,4 +21,3 @@ jobs:
         api_key: $API_KEY
         on:
           tags: true
-          branch: release
